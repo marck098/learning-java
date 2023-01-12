@@ -14,33 +14,29 @@ public class Program {
 
 		int qtdHospedes = 0;
 
-		Rent[] rent = new Rent[10];
+		Rent[] vect = new Rent[10];
 
 		System.out.println("Quantas Pessoas serão hospedadas?");
 		qtdHospedes = sc.nextInt();
-		sc.nextLine();
 
 		for (int i = 0; i < qtdHospedes; i++) {
 			System.out.print("Nome: ");
-			String name = sc.next();
 			sc.nextLine();
+			String name = sc.nextLine();
 			System.out.print("E-mail: ");
 			String email = sc.next();
-			sc.nextLine();
 			System.out.println("Quarto: ");
 			int roomNumber = sc.nextInt();
-			sc.nextLine();
-			rent[roomNumber] = new Rent(name, email);
+			Rent rent = new Rent(name, email);
+			vect[roomNumber] = rent;
 		}
-
 		System.out.println();
 		System.out.println("- QUARTOS OCUPADOS -");
-		for (int i = 0; i <= 10; i++) {
-			if (rent[i] != null) {
-				System.out.println(rent[i] + " : " + i);
+		for (int i = 0; i < 10; i++) {
+			if (vect[i] != null) {
+				System.out.println(vect[i] + " : " + i);
 			}
 		}
 		sc.close();
 	}
-
 }

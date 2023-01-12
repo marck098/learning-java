@@ -5,12 +5,15 @@ public class Rent {
 	private String email;
 	private String name;
 
+	public Rent(String name, String email) {
+		this.name = name;
+		this.email = email;
+
+	}
+
 	public Rent() {		
 	}
 	
-	public Rent(String name, String email) {		
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -28,7 +31,7 @@ public class Rent {
 	}
 	
 	public String toString() {
-		return "Name: " + name + " E-mail: " + email + " Room: ";
+		return "Name: " + this.name + " E-mail: " + this.email + " Room: ";
 	}
 	
 	
