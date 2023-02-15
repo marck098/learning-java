@@ -1,12 +1,13 @@
 package entities;
 
 public class Contato {
-	
+
 	private String name;
 	private int age;
 	private double height;
 
-	public Contato() {}
+	public Contato() {
+	}
 
 	public Contato(String name, int age, double height) {
 		this.name = name;
@@ -37,11 +38,9 @@ public class Contato {
 	public void setHeight(double height) {
 		this.height = height;
 	}
-	
+
 	public String toString() {
-		return "Contato [name=" + name + ", age=" + age + ", height=" + height + "]";
+		return "CONTATO - " + "NAME: " + this.name + ", AGE: " + this.age + ", ALTURA: " + this.height;
 	}
 
-	
-	
 }
