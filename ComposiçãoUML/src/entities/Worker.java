@@ -53,12 +53,20 @@ public class Worker {
 		return department;
 	}
 
-	public void addContratc(HourContract contratc) {
-		contracts.add(contratc);
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+	
+	public List<HourContract> getContracts() {
+		return contracts;
 	}
 
-	public void removeContratc(HourContract contratc) {
-		contracts.remove(contratc);
+	public void addContract(HourContract contract) {
+		contracts.add(contract);
+	}
+
+	public void removeContract(HourContract contract) {
+		contracts.remove(contract);
 	}
 
 	public double income(int year, int month) {
@@ -70,8 +78,11 @@ public class Worker {
 			int c_month = 1 + cal.get(Calendar.MONTH);
 			if (year == c_year && month == c_month) {
 				soma += c.totalValue();
+				System.out.println(c.totalValue());
+				System.out.println(soma);
 			}
 		}
+	
 		return soma;
 	}
 
