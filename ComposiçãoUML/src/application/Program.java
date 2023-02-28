@@ -48,8 +48,8 @@ public class Program {
 		System.out.println();
 		System.out.println("Insira o MÊS e ANO para calculo o Salario(MM/YYYY): ");
 		String monthAndYear = sc.next();
-		int month = Integer.parseInt(monthAndYear.substring(0, 2));
-		int year = Integer.parseInt(monthAndYear.substring(3));
+		int month = Integer.parseInt(monthAndYear.substring(0, 2)); // utiliza o Integer.parseInt para converter em INT e substring(index, index) 
+		int year = Integer.parseInt(monthAndYear.substring(3));     // para selecionar dentro das string quais intervalos serão selecionados
 		System.out.println("Name: " + worker.getName());
 		System.out.println("Deptarment: " + worker.getDepartment().getName());
 		System.out.println("Income for: " + monthAndYear + " : " + String.format("%.2f", worker.income(year, month)));

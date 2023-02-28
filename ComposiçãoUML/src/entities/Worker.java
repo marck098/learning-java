@@ -13,7 +13,7 @@ public class Worker {
 	private Double baseSalary;
 
 	private Department department;
-	private List<HourContract> contracts = new ArrayList<>();
+	private List<HourContract> contracts = new ArrayList<>(); // NÃO É INSTANCIADA DENTRO DO CONSTRUTOR
 
 	public Worker() {
 	}
@@ -71,11 +71,11 @@ public class Worker {
 
 	public double income(int year, int month) {
 		double soma = baseSalary;
-		Calendar cal = Calendar.getInstance();
-		for (HourContract c : contracts) {
-			cal.setTime(c.getDate());
-			int c_year = cal.get(Calendar.YEAR);
-			int c_month = 1 + cal.get(Calendar.MONTH);
+		Calendar cal = Calendar.getInstance(); // cria um objeto tipo Calendário e usa o .getInstance() para retornar um calendário 
+		for (HourContract c : contracts) {    // ...dentro do local e zona padrão da máquina.
+			cal.setTime(c.getDate()); //  c.getDate irá pegar a data a qual será "setada" em cal.setTime ou seja, seta em Cal a data do contrato c.
+			int c_year = cal.get(Calendar.YEAR); // cal.get(Calendar.YEAR) pega o ano q o objeto c passou para cal
+			int c_month = 1 + cal.get(Calendar.MONTH); // cal.get(Calendar.MONTH) pega o mês q o objeto c passou para cal
 			if (year == c_year && month == c_month) {
 				soma += c.totalValue();
 				System.out.println(c.totalValue());
