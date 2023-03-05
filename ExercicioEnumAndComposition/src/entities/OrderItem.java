@@ -1,26 +1,25 @@
 package entities;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class OrderItem {
-	
+
 	private double price;
 	private int quantity;
-	
-	public List<Product> product = new ArrayList<>();
-	
-	public OrderItem() {}
-	
-	public OrderItem(double price, int quantity) {
+
+	private Product product;
+
+	public OrderItem() {
+	}
+
+	public OrderItem(double price, int quantity, Product product) {
 		this.price = price;
 		this.quantity = quantity;
+		this.product = product;
 	}
-		
+
 	public double getPrice() {
 		return price;
 	}
-	
+
 	public void setPrice(double price) {
 		this.price = price;
 	}
@@ -33,10 +32,22 @@ public class OrderItem {
 		this.quantity = quantity;
 	}
 
-	public double subtotal(double price, Integer quantity) {
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	public double subtotal() {
 		return price * quantity;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return product + " QTD: " + quantity + " - " + "SubTotal = " + subtotal();
+
+	}
 
 }
