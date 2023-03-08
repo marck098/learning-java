@@ -2,8 +2,8 @@ package entities;
 
 public class Account {
 
-	private int numberAccount;
-	private String holder;
+	protected int numberAccount;
+	protected String holder;
 	protected double balance;
 
 	public Account() {
@@ -43,4 +43,5 @@ public class Account {
 		this.balance += amount;
 	}
 
+	
 }
